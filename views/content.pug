@@ -21,20 +21,20 @@ html
               li#posts(v-for="post in posts")
                 span.profile
                   img(:src="post.profilepic" @click="authorinfo(posts, post)")
-                span.author {{ post.name }} —
-                span.date {{ post.date }} —
-                span.reply {{ post.reply }}
-                p {{ post.message }}
+                span.author | {{ post.name }} —
+                span.date | {{ post.date }} —
+                span.reply | {{ post.reply }}
+                p | {{ post.message }}
             div#info_box(v-for="post in posts" v-if="post.thisBox")
               p.closeBtn.closeBtnP(@click="post.thisBox = false") &#10006;
-              div#info_title {{ post.name }}
+              div#info_title | {{ post.name }}
               div#info_foodie
                 span Foodie Level: 
-                {{ post.foodielevel }}
+                | {{ post.foodielevel }}
               div#info_bio
                 span Bio: 
                 br 
-                {{ post.bio }}
+                | {{ post.bio }}
               button.closeBtn.closeBtnB(@click="post.thisBox = false") Close
     footer
       | &copy; Copyright FOOD BLOG
